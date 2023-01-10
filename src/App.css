@@ -52,6 +52,8 @@ body {
 
 .Articles__list {
   list-style-type: none;
+  display: grid;
+  grid-auto-rows: 1fr;
 }
 
 .ArticleCard {
@@ -61,24 +63,36 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 20px;
+  grid-template-areas: 
+    "title title title"
+    "created_at author topic";
   grid-row-gap: 10px;
 }
 
 .ArticleCard__title {
-  grid-area: 1 / 1 / 2 / 4;
-  margin: auto 15px;
+  grid-area: title;
+  margin: 10px 15px;
 }
 
 .ArticleCard__created_at {
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: created_at;
 }
 
 .ArticleCard__author {
-  grid-area: 2 / 2 / 3 / 3;
-  /* align-items: center;
-  justify-content: center; */
+  grid-area: author;
 }
 
-.ArticleCard__category {
-  grid-area: 2 / 3 / 3 / 4;
+.ArticleCard__topic {
+  grid-area: topic;
+}
+
+@media only screen and (min-width: 768px) {
+  .Articles__list {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+    justify-content: space-evenly;
+    margin: 30px;
+  }
 }
