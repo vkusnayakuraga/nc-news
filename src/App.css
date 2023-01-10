@@ -58,7 +58,7 @@ body {
 
 .ArticleCard {
   border: 1px solid blue;
-  margin: 15px 0;
+  margin: 15px;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
