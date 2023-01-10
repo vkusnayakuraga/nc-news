@@ -1,3 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F5F4F0;
+  color: #3A4642;
+}
+
 .App {
   text-align: center;
+}
+
+.Header {
+  padding: 20px 0;
+  margin-bottom: 10px;
+  box-shadow: 0px 1px 2px 2px #e3e3e3;
+  background-color: #3A4642;
+  color: #F5F4F0;
+}
+
+.Header__link {
+  color: #8F6D48;
+}
+
+.Header__link:link {
+  text-decoration: none;
+}
+
+.Header__link:visited {
+  text-decoration: none;
+}
+
+.Header__link:hover {
+  text-decoration: underline;
+}
+
+.Header__link:active {
+  text-decoration: underline;
+}
+
+.Nav {
+  border: 2px solid green;
+  background-color: rgba(0, 128, 0, 0.085);
+}
+
+.Articles {
+  border: 2px solid orange;
+}
+
+.Articles__list {
+  list-style-type: none;
+}
+
+.ArticleCard {
+  border: 1px solid blue;
+  margin: 15px 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 20px;
+  grid-row-gap: 10px;
+}
+
+.ArticleCard__title {
+  grid-area: 1 / 1 / 2 / 4;
+  margin: auto 15px;
+}
+
+.ArticleCard__created_at {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.ArticleCard__author {
+  grid-area: 2 / 2 / 3 / 3;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.ArticleCard__category {
+  grid-area: 2 / 3 / 3 / 4;
 }
