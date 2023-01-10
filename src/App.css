@@ -1,38 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F5F4F0;
+  color: #3A4642;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Header {
+  padding: 20px 0;
+  background-color: #3A4642;
+  color: #F5F4F0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Header__link {
+  color: #8F6D48;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Header__link:link {
+  text-decoration: none;
+}
+
+.Header__link:visited {
+  text-decoration: none;
+}
+
+.Header__link:hover {
+  text-decoration: underline;
+}
+
+.Header__link:active {
+  text-decoration: underline;
+}
+
+.Nav {
+  border: 2px solid green;
+  background-color: rgba(0, 128, 0, 0.085);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-evenly;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.Articles {
+  border: 2px solid orange;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.Articles__list {
+  list-style-type: none;
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+.ArticleCard {
+  border: 1px solid blue;
+  margin: 15px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 0.5fr;
+  grid-template-areas: 
+    "title title title"
+    "created_at author topic";
+  grid-row-gap: 10px;
+}
+
+.ArticleCard__title {
+  grid-area: title;
+  margin: 10px 15px;
+}
+
+.ArticleCard__created_at {
+  grid-area: created_at;
+}
+
+.ArticleCard__author {
+  grid-area: author;
+}
+
+.ArticleCard__topic {
+  grid-area: topic;
+}
+
+@media only screen and (min-width: 768px) {
+  .Articles__list {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+    justify-content: space-evenly;
+    margin: 30px;
   }
 }
