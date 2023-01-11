@@ -6,6 +6,8 @@ const SingleArticle = () => {
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { article_id } = useParams();
+  const date = new Date(article.created_at);
+  const dateOptions = { year: "numeric", month: "long", day: "numeric" };
 
   useEffect(() => {
     setIsLoading(true);
@@ -25,9 +27,19 @@ const SingleArticle = () => {
 
   return (
     <main>
-      <h2>{article.title}</h2>
-      <p>{article.created_at.substring(0, 10)}</p>
-      <p>{article.author}</p>
+      <header>
+        <section>
+          <time dateTime={date.toString()}>
+            {date.toLocaleDateString("en-GB", dateOptions)}
+          </time>
+          <span> / </span>
+          <span>#{article.topic}</span>
+        </section>
+        <h2>{article.title}</h2>
+      </header>
+      {/* <h2>{article.title}</h2> */}
+      {/* <p>{article.created_at.substring(0, 10)}</p> */}
+      <p>@{article.author}</p>
       <p>{article.body}</p>
     </main>
   );
