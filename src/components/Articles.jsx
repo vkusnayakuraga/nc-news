@@ -15,7 +15,11 @@ const Articles = () => {
   }, []);
 
   if (isLoading) {
-    return <p className="Loading">Loading...</p>;
+    return (
+      <main>
+        <p className="Loading">Loading...</p>
+      </main>
+    );
   }
 
   return (

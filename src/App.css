@@ -61,18 +61,37 @@ body {
   border: 1px solid blue;
   margin: 15px;
 
+  display: flex;
+  justify-content: space-around;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+.ArticleCard__link {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 0.5fr;
-  grid-template-areas: 
+  grid-template-areas:
     "title title title"
     "created_at author topic";
   grid-row-gap: 10px;
+
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .ArticleCard__title {
   grid-area: title;
   margin: 10px 15px;
+}
+
+.ArticleCard__title:hover {
+  text-decoration: underline;
+}
+
+.ArticleCard__title:active {
+  text-decoration: underline;
 }
 
 .ArticleCard__created_at {
