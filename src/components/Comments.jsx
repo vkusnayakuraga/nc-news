@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getCommentsByArticleId } from "../utils/api";
 import CommentCard from "./CommentCard";
 
-const Comments = ({ article_id }) => {
+const Comments = ({ article_id, comment_count }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -25,7 +25,7 @@ const Comments = ({ article_id }) => {
   return (
     <section className="Comments">
       <header className="Comments__header">
-        <h3>Comments</h3>
+        <h3>Comments {comment_count}</h3>
         <p>All in fancy Latin</p>
       </header>
       <ul className="Comments__list">

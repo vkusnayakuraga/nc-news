@@ -147,22 +147,29 @@ body {
 
 .CommentCard {
   border: 2px solid lightsalmon;
-  margin: 15px;
-  padding: 5px;
+  margin: 15px 0;
+  padding: 5px 0;
+}
 
+.CommentCard__head {
+  border: 2px solid lightseagreen;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-content: stretch;
-  align-items: stretch;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 0 0 0.5vw;
 }
 
 .CommentCard__author {
   color: #8F6D48;
-  padding: 0 0 0.5vw;
+}
+
+.CommentCard__created_at {
+  margin-left: 10px;
 }
 
 .CommentCard__body {
+  border: 2px solid lightskyblue;
   text-align: start;
 }
 

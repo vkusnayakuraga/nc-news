@@ -40,7 +40,7 @@ const SingleArticle = () => {
       </header>
       <p className="SingleArticle__author">@{article.author}</p>
       <p className="SingleArticle__body">{article.body}</p>
-      <Comments article_id={article.article_id} />
+      <Comments article_id={article.article_id} comment_count={article.comment_count} />
     </main>
   );
 };
