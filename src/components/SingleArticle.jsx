@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleById } from "../utils/api";
+import Comments from "./Comments";
 
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
@@ -30,15 +31,16 @@ const SingleArticle = () => {
       <header className="SingleArticle__header">
         <h2 className="SingleArticle__title">{article.title}</h2>
         <section className="SingleArticle__header__data">
-          <time dateTime={date.toString()}>
+          <time dateTime={date.toString()} className="date">
             {date.toLocaleDateString("en-GB", dateOptions)}
           </time>
           <span className="date-divider">/</span>
-          <span>#{article.topic}</span>
+          <span className="topic-tag">#{article.topic}</span>
         </section>
       </header>
       <p className="SingleArticle__author">@{article.author}</p>
       <p className="SingleArticle__body">{article.body}</p>
+      <Comments article_id={article.article_id} />
     </main>
   );
 };

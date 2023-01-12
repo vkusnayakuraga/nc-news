@@ -20,7 +20,7 @@ body {
 }
 
 .Header__link {
-  color: #8F6D48;
+  color: #C9B99E;
 }
 
 .Header__link:link {
@@ -127,13 +127,52 @@ body {
 }
 
 .SingleArticle__author {
+  color: #8F6D48;
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 5vw;
+}
+
+.SingleArticle__body {
+  padding: 0 0 4vw;
+}
+
+.Comments {
+  border: 2px solid lightcoral;
+}
+
+.Comments__list {
+  border: 2px solid lightgray;
+  list-style-type: none;
+}
+
+.CommentCard {
+  border: 2px solid lightsalmon;
+  margin: 15px;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+.CommentCard__author {
+  color: #8F6D48;
+  padding: 0 0 0.5vw;
+}
+
+.CommentCard__body {
+  text-align: start;
 }
 
 .date-divider {
   display: inline-block;
   margin: 0 6px 1px
+}
+
+.topic-tag {
+  color: #926156;
 }
 
 .outer {
@@ -154,7 +193,20 @@ body {
     font-size: 3.2rem;
   }
 
+  .SingleArticle__author {
+    padding-bottom: 3vw;
+    font-size: larger;
+  }
+  
   .SingleArticle__body {
+    font-size: large;
+  }
+
+  .Comments {
+    font-size: medium;
+  }
+
+  .CommentCard__body {
     font-size: large;
   }
 }
@@ -169,7 +221,23 @@ body {
     margin: 30px;
   }
 
+  .SingleArticle__author {
+    font-size: x-large;
+  }
+
   .SingleArticle__body {
     font-size: 1.8rem;
+  }
+
+  .Comments {
+    font-size: large;
+  }
+
+  .Comments__header {
+    font-size: larger;
+  }
+
+  .CommentCard__body {
+    font-size: larger;
   }
 }
