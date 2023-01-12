@@ -5,8 +5,6 @@ import CommentCard from "./CommentCard";
 const Comments = ({ article_id }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // const date = new Date(comments[0].created_at);
-  // const dateOptions = { year: "numeric", month: "long", day: "numeric" };
 
   useEffect(() => {
     setIsLoading(true);
