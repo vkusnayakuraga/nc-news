@@ -187,6 +187,12 @@ body {
   padding: 0 4vw;
 }
 
+.no-comments {
+  font-size: larger;
+  white-space: pre-wrap;
+  margin: 4vw 0;
+}
+
 @media only screen and (min-width: 500px) {
   .SingleArticle__header {
     padding: 2vw 0 3vw;
@@ -215,6 +221,11 @@ body {
 
   .CommentCard__body {
     font-size: large;
+  }
+
+  .no-comments {
+    font-size: x-large;
+    margin: 3vw 0;
   }
 }
 
@@ -246,5 +257,10 @@ body {
 
   .CommentCard__body {
     font-size: larger;
+  }
+
+  .no-comments {
+    font-size: xx-large;
+    margin: 2vw 0;
   }
 }

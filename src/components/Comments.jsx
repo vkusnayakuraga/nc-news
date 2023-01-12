@@ -28,11 +28,18 @@ const Comments = ({ article_id, comment_count }) => {
         <h3>Comments {comment_count}</h3>
         <p>All in fancy Latin</p>
       </header>
-      <ul className="Comments__list">
-        {comments.map((comment) => (
-          <CommentCard key={comment.comment_id} {...comment} />
-        ))}
-      </ul>
+      {comment_count === 0 ? (
+        <section className="no-comments">
+          <p>Commentaria hic non sunt adhuc</p>
+          <p>(No comments here yet...)</p>
+        </section>
+      ) : (
+        <ul className="Comments__list">
+          {comments.map((comment) => (
+            <CommentCard key={comment.comment_id} {...comment} />
+          ))}
+        </ul>
+      )}
     </section>
   );
 };
