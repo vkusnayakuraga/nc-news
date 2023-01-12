@@ -28,6 +28,7 @@ const SingleArticle = () => {
   return (
     <main className="SingleArticle outer">
       <header className="SingleArticle__header">
+        <h2 className="SingleArticle__title">{article.title}</h2>
         <section className="SingleArticle__header__data">
           <time dateTime={date.toString()}>
             {date.toLocaleDateString("en-GB", dateOptions)}
@@ -35,7 +36,6 @@ const SingleArticle = () => {
           <span className="date-divider">/</span>
           <span>#{article.topic}</span>
         </section>
-        <h2 className="SingleArticle__title">{article.title}</h2>
       </header>
       <p className="SingleArticle__author">@{article.author}</p>
       <p className="SingleArticle__body">{article.body}</p>

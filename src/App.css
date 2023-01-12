@@ -111,11 +111,12 @@ body {
 }
 
 .SingleArticle__header {
-  padding: 0 0 5vw;
+  padding: 2vw 0 5vw;
 }
 
 .SingleArticle__header__data {
   line-height: 1.3em;
+  padding: 2vw 0 0;
 
   display: flex;
   color: var(--gray75);
@@ -142,12 +143,11 @@ body {
 
 @media only screen and (min-width: 500px) {
   .SingleArticle__header {
-    padding: 0 0 3vw;
+    padding: 2vw 0 3vw;
   }
 
   .SingleArticle__header__data {
     font-size: 1.4rem;
-    line-height: inherit;
   }
 
   .SingleArticle__title {
@@ -167,10 +167,6 @@ body {
     grid-column-gap: 50px;
     justify-content: space-evenly;
     margin: 30px;
-  }
-
-  .SingleArticle__header {
-    padding: 0 0 3vw;
   }
 
   .SingleArticle__body {
