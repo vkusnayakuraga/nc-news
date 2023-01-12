@@ -26,21 +26,19 @@ const SingleArticle = () => {
   }
 
   return (
-    <main>
-      <header>
-        <section>
+    <main className="SingleArticle outer">
+      <header className="SingleArticle__header">
+        <section className="SingleArticle__header__data">
           <time dateTime={date.toString()}>
             {date.toLocaleDateString("en-GB", dateOptions)}
           </time>
-          <span> / </span>
+          <span className="date-divider">/</span>
           <span>#{article.topic}</span>
         </section>
-        <h2>{article.title}</h2>
+        <h2 className="SingleArticle__title">{article.title}</h2>
       </header>
-      {/* <h2>{article.title}</h2> */}
-      {/* <p>{article.created_at.substring(0, 10)}</p> */}
-      <p>@{article.author}</p>
-      <p>{article.body}</p>
+      <p className="SingleArticle__author">@{article.author}</p>
+      <p className="SingleArticle__body">{article.body}</p>
     </main>
   );
 };
