@@ -136,6 +136,11 @@ body {
   padding: 0 0 4vw;
 }
 
+.Votes {
+  padding: 0 0 4vw;
+  font-size: large;
+}
+
 .Comments {
   border: 2px solid lightcoral;
 }
@@ -215,6 +220,10 @@ body {
     font-size: large;
   }
 
+  .Votes {
+    font-size: x-large;
+  }
+
   .Comments {
     font-size: medium;
   }
@@ -245,6 +254,10 @@ body {
 
   .SingleArticle__body {
     font-size: 1.8rem;
+  }
+
+  .Votes {
+    font-size: xx-large;
   }
 
   .Comments {
