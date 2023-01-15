@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getCommentsByArticleId } from "../utils/api";
+import CommentAdder from "./CommentAdder";
 import CommentCard from "./CommentCard";
 
 const Comments = ({ article_id, comment_count }) => {
@@ -28,6 +29,7 @@ const Comments = ({ article_id, comment_count }) => {
         <h3>Comments {comment_count}</h3>
         <p>All in fancy Latin</p>
       </header>
+      <CommentAdder article_id={article_id} setComments={setComments} />
       {comment_count === 0 ? (
         <section className="no-comments">
           <p>Commentaria hic non sunt adhuc</p>
