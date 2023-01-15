@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleById } from "../utils/api";
 import Comments from "./Comments";
+import Votes from "./Votes";
 
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
@@ -40,7 +41,11 @@ const SingleArticle = () => {
       </header>
       <p className="SingleArticle__author">@{article.author}</p>
       <p className="SingleArticle__body">{article.body}</p>
-      <Comments article_id={article.article_id} comment_count={article.comment_count} />
+      <Votes {...article} />
+      <Comments
+        article_id={article.article_id}
+        comment_count={article.comment_count}
+      />
     </main>
   );
 };

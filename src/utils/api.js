@@ -20,4 +20,8 @@ export const getCommentsByArticleId = (article_id) => {
   return newsApi.get(`/articles/${article_id}/comments`).then((res) => {
     return res.data.comments;
   });
-}
+};
+
+export const updateVotesByArticleId = (article_id, inc_votes) => {
+  return newsApi.patch(`/articles/${article_id}`, { inc_votes });
+};

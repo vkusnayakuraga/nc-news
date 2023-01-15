@@ -1,5 +1,3 @@
-// import { Link } from "react-router-dom";
-
 const Nav = () => {
   const topics = ["All", "Coding", "Cooking", "Football"];
 

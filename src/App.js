@@ -1,22 +1,20 @@
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Articles from "./components/Articles";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
-import Articles from "./components/Articles";
 import SingleArticle from "./components/SingleArticle";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Header />
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Articles />} />
-          <Route path="/articles/:article_id" element={<SingleArticle />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <Header />
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Articles />} />
+        <Route path="/articles/:article_id" element={<SingleArticle />} />
+      </Routes>
+    </div>
   );
 }
 
