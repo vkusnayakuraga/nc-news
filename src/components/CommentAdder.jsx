@@ -7,14 +7,22 @@ const CommentAdder = ({ article_id, setComments }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    postCommentByArticleId(article_id, username, newComment).then(
-      (newComment) => {
-        setComments((currComments) => {
-          return [newComment, ...currComments];
-        });
-      }
-    );
+    if (newComment.trim() !== "") {
+      postCommentByArticleId(article_id, username, newComment).then(
+        (newComment) => {
+          setComments((currComments) => {
+            return [newComment, ...currComments];
+          });
+        }
+      );
+    } else {
+      alert("Invalid comment format ;(")
+    }
     setNewComment("");
+  };
+
+  const handleChange = (event) => {
+    setNewComment(event.target.value);
   };
 
   return (
@@ -23,7 +31,10 @@ const CommentAdder = ({ article_id, setComments }) => {
       <textarea
         id="newComment"
         value={newComment}
-        onChange={(event) => setNewComment(event.target.value)}
+        onChange={handleChange}
+        placeholder="(3000 characters max)"
+        maxLength="3000"
+        required
       ></textarea>
       <button type="submit">Send</button>
     </form>
