@@ -16,7 +16,7 @@ const CommentCard = (comment) => {
           {date.toLocaleString("en-GB", dateOptions)}
         </time>
       </section>
-      <p className="CommentCard__body">{comment.body}</p>
+      <p className="CommentCard__body long-strings-breaker">{comment.body}</p>
     </li>
   );
 };

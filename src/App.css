@@ -245,6 +245,7 @@ body {
 
 .CommentCard__body {
   text-align: start;
+  white-space: break-spaces;
 }
 
 .date-divider {
@@ -265,6 +266,14 @@ body {
   font-size: larger;
   white-space: pre-wrap;
   margin: 4vw 0;
+}
+
+.long-strings-breaker {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  word-break: break-word;
 }
 
 @media only screen and (min-width: 500px) {
