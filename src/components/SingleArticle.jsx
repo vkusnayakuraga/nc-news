@@ -6,6 +6,7 @@ import Votes from "./Votes";
 
 const SingleArticle = () => {
   const [article, setArticle] = useState({});
+  const [commentCount, setCommentCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const { article_id } = useParams();
   const date = new Date(article.created_at);
@@ -15,6 +16,7 @@ const SingleArticle = () => {
     setIsLoading(true);
     getArticleById(article_id).then((article) => {
       setArticle(article);
+      setCommentCount(article.comment_count);
       setIsLoading(false);
     });
   }, [article_id]);
@@ -44,7 +46,8 @@ const SingleArticle = () => {
       <Votes {...article} />
       <Comments
         article_id={article.article_id}
-        comment_count={article.comment_count}
+        commentCount={commentCount}
+        setCommentCount={setCommentCount}
       />
     </main>
   );

@@ -3,7 +3,7 @@ import { getCommentsByArticleId } from "../utils/api";
 import CommentAdder from "./CommentAdder";
 import CommentCard from "./CommentCard";
 
-const Comments = ({ article_id, comment_count }) => {
+const Comments = ({ article_id, commentCount, setCommentCount }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -26,11 +26,15 @@ const Comments = ({ article_id, comment_count }) => {
   return (
     <section className="Comments">
       <header className="Comments__header">
-        <h3>Comments {comment_count}</h3>
+        <h3>Comments {commentCount}</h3>
         <p>All in fancy Latin</p>
       </header>
-      <CommentAdder article_id={article_id} setComments={setComments} />
-      {comment_count === 0 ? (
+      <CommentAdder
+        article_id={article_id}
+        setComments={setComments}
+        setCommentCount={setCommentCount}
+      />
+      {commentCount === 0 ? (
         <section className="no-comments">
           <p>Commentaria hic non sunt adhuc</p>
           <p>(No comments here yet...)</p>

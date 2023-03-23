@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { postCommentByArticleId } from "../utils/api";
 
-const CommentAdder = ({ article_id, setComments }) => {
+const CommentAdder = ({ article_id, setComments, setCommentCount }) => {
   const [newComment, setNewComment] = useState("");
   const username = "testuser";
 
@@ -12,6 +12,9 @@ const CommentAdder = ({ article_id, setComments }) => {
         (newComment) => {
           setComments((currComments) => {
             return [newComment, ...currComments];
+          });
+          setCommentCount((currCount) => {
+            return currCount + 1;
           });
         }
       );
