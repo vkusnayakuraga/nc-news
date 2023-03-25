@@ -3,11 +3,13 @@ import { postCommentByArticleId } from "../utils/api";
 
 const CommentAdder = ({ article_id, setComments, setCommentCount }) => {
   const [newComment, setNewComment] = useState("");
+  const [isSending, setIsSending] = useState(false);
   const username = "testuser";
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (newComment.trim() !== "") {
+      setIsSending(true);
       postCommentByArticleId(article_id, username, newComment).then(
         (newComment) => {
           setComments((currComments) => {
@@ -16,6 +18,7 @@ const CommentAdder = ({ article_id, setComments, setCommentCount }) => {
           setCommentCount((currCount) => {
             return currCount + 1;
           });
+          setIsSending(false);
         }
       );
     } else {
@@ -39,7 +42,13 @@ const CommentAdder = ({ article_id, setComments, setCommentCount }) => {
         maxLength="3000"
         required
       ></textarea>
-      <button type="submit">Send</button>
+      <button type="submit" disabled={isSending}>
+        {isSending ? (
+          <span className="loader">Sending</span>
+        ) : (
+          <span>Send</span>
+        )}
+      </button>
     </form>
   );
 };
