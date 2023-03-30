@@ -22,6 +22,18 @@ export const getCommentsByArticleId = (article_id) => {
   });
 };
 
+export const postCommentByArticleId = (article_id, username, newComment) => {
+  const postBody = {
+    username: username,
+    body: newComment,
+  };
+  return newsApi
+    .post(`/articles/${article_id}/comments`, postBody)
+    .then((res) => {
+      return res.data.comment;
+    });
+};
+
 export const updateVotesByArticleId = (article_id, inc_votes) => {
   return newsApi.patch(`/articles/${article_id}`, { inc_votes });
 };
