@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -67,6 +68,81 @@ body {
 
 .NavLink__more {
   float: right;
+}
+
+.Sorting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.Sorting__group {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Sorting__label {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 5px;
+}
+
+.Sorting__select {
+  height: 3rem;
+  width: 90%;
+  padding: 8px;
+  font-size: medium;
+  margin: 5px 0;
+  color: #3A4642;
+  background-color: #F5F4F0;
+  border-color: #3A4642;
+  text-align-last: center;
+  cursor: pointer;
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: none;
+}
+
+.Sorting__select:hover {
+  filter: brightness(90%);
+  -webkit-filter: brightness(90%);
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.Sorting__button {
+  width: 30%;
+  display: block;
+  height: 3rem;
+  border: 0;
+  bottom: 0;
+  cursor: pointer;
+  font-size: medium;
+
+  margin: 5px auto;
+  border-radius: 5px;
+
+  color: #3A4642;
+  background-color: #C9B99E;
+}
+
+.Sorting__button:hover {
+  background-color: #8F6D48;
+  color: white;
+  transition: 0.2s background ease;
 }
 
 .Articles__list {
@@ -322,9 +398,11 @@ body {
   0% {
     box-shadow: 5px 0 rgba(0, 0, 0, 0), 10px 0 rgba(0, 0, 0, 0);
   }
+
   50% {
     box-shadow: 5px 0 black, 10px 0 rgba(0, 0, 0, 0);
   }
+
   100% {
     box-shadow: 5px 0 black, 10px 0 black;
   }
@@ -375,6 +453,12 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+  .Sorting__group {
+    flex-direction: row;
+    width: 93%;
+    gap: 50px;
+  }
+
   .Articles__list {
     display: grid;
     grid-auto-rows: 1fr;
@@ -428,6 +512,41 @@ body {
     max-width: 976px;
     margin: 0 auto;
   }
+
+  .Sorting {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 45px;
+  }
+
+  .Sorting__group {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .Sorting__label {
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin: 0;
+    margin-right: 20vw;
+  }
+
+  .Sorting__select {
+    width: auto;
+    padding: 10px 15px;
+
+    -moz-appearance: auto;
+    -webkit-appearance: auto;
+    appearance: auto;
+  }
+
+  .Sorting__button {
+    width: auto;
+    padding: 10px 20px;
+    margin: 0;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -439,5 +558,9 @@ body {
   .Nav__container {
     max-width: 1248px;
     margin: 0 auto;
+  }
+
+  .Sorting__label {
+    margin-right: 25vw;
   }
 }
