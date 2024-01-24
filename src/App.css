@@ -330,6 +330,7 @@ body {
   align-items: center;
   margin-bottom: 8px;
   padding: 0 0 0.5vw;
+  position: relative;
 }
 
 .CommentCard__author {
@@ -338,6 +339,32 @@ body {
 
 .CommentCard__created_at {
   margin-left: 10px;
+}
+
+.CommentCard__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  border: none;
+  position: absolute;
+  top: 2px;
+  right: 0;
+  cursor: pointer;
+  background-color: inherit;
+}
+
+.CommentCard__button:disabled .CommentCard__button_icon {
+  filter: opacity(50%);
+}
+
+.CommentCard__button:hover {
+  background-color: revert;
+  filter: brightness(80%);
+}
+
+.CommentCard__button_icon {
+  scale: 1.25;
 }
 
 .CommentCard__body {
@@ -490,6 +517,10 @@ body {
 
   .Comments__header {
     font-size: larger;
+  }
+
+  .CommentCard__button_icon {
+    scale: 1.5;
   }
 
   .CommentCard__body {

@@ -38,6 +38,10 @@ export const postCommentByArticleId = (article_id, username, newComment) => {
     });
 };
 
+export const deleteCommentByCommentId = (comment_id) => {
+  return newsApi.delete(`/comments/${comment_id}`);
+};
+
 export const updateVotesByArticleId = (article_id, inc_votes) => {
   return newsApi.patch(`/articles/${article_id}`, { inc_votes });
 };
