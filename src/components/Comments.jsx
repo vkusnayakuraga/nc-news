@@ -1,11 +1,39 @@
 import { useEffect, useState } from "react";
-import { getCommentsByArticleId } from "../utils/api";
+import { deleteCommentByCommentId, getCommentsByArticleId } from "../utils/api";
 import CommentAdder from "./CommentAdder";
 import CommentCard from "./CommentCard";
 
 const Comments = ({ article_id, commentCount, setCommentCount }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const loggedInUser = "testuser";
+
+  const handleDeleteComment = (commentId) => {
+    const shouldDelete = window.confirm(
+      "Are you sure you want to delete this comment?"
+    );
+
+    if (shouldDelete) {
+      setIsDeleting(true);
+      deleteCommentByCommentId(commentId)
+        .then(() => {
+          setComments((oldComments) => {
+            return oldComments.filter(
+              (comment) => comment.comment_id !== commentId
+            );
+          });
+          setCommentCount((currCount) => {
+            return currCount - 1;
+          });
+          setIsDeleting(false);
+        })
+        .catch(() => {
+          alert("Oops, something went wrong...\nPlease try again later");
+          setIsDeleting(false);
+        });
+    }
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -42,7 +70,13 @@ const Comments = ({ article_id, commentCount, setCommentCount }) => {
       ) : (
         <ul className="Comments__list">
           {comments.map((comment) => (
-            <CommentCard key={comment.comment_id} {...comment} />
+            <CommentCard
+              key={comment.comment_id}
+              comment={comment}
+              loggedInUser={loggedInUser}
+              handleDeleteComment={handleDeleteComment}
+              isDeleting={isDeleting}
+            />
           ))}
         </ul>
       )}
